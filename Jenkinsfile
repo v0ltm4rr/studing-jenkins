@@ -2,6 +2,7 @@ pipeline {
     agent any
    	environment {
  			HOST = '2ip.ru'
+ 			TEST_USER = 'test_user'
 	}
     options {
   		timestamps()
@@ -18,6 +19,7 @@ pipeline {
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
           		      powershell 'curl $env:HOST'
+          		      powershell '-File ./test_ps.ps1 -UserName $env:TEST_USER'
          		   }
         }
         stage('Second') {
