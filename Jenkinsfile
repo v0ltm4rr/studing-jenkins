@@ -1,7 +1,7 @@
 pipeline {
     agent any
    	environment {
- 			HOST = ${params.Value
+ 			HOST = ${params.Value}
 	}
     options {
   		timestamps()
