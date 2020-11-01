@@ -19,7 +19,7 @@ pipeline {
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
-          		      powershell 'curl 2ip.ru'
+          		      powershell 'curl $env:HOST'
          		   }
         }
         stage('Second') {
