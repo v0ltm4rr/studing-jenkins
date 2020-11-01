@@ -8,6 +8,7 @@ pipeline {
 	}
     parameters {
 	  choice choices: ['First', 'Second'], description: '', name: 'Chose_variant'
+	  string defaultValue: 'Test_values', description: '', name: 'Value', trim: false
 	}
 
     stages {
@@ -17,7 +18,7 @@ pipeline {
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
-          		      echo $Value
+          		      echo params.Value
          		   }
         }
         stage('Second') {
