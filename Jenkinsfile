@@ -19,7 +19,7 @@ pipeline {
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
           		      powershell 'curl $env:HOST'
-          		      powershell '-File ./test_ps.ps1 -UserName $env:TEST_USER'
+          		      powershell './test_ps.ps1 -UserName $env:TEST_USER'
          		   }
         }
         stage('Second') {
