@@ -23,7 +23,7 @@ pipeline {
                 expression { params.Chose_variant == 'Second' }
             }
          		   steps {
-          		      echo 'Hello Second'
+          		      echo ('Hello ' + params.Chose_variant)
           		      echo ''
           		      echo params.Chose_variant
          		   }
