@@ -8,26 +8,26 @@ pipeline {
   		timestamps()
 	}
     parameters {
-	  choice choices: ['First', 'Second'], description: '', name: 'Chose_variant'
+	  choice choices: ['PowerShell', 'Bash'], description: '', name: 'Chose_shell'
 	}
 
     stages {
-        stage('First') {
+        stage('PowerShell') {
             when {
-                expression { params.Chose_variant == 'First' }
+                expression { params.Chose_shell == 'First' }
             }
          		   steps {
-          		      echo ('Hello ' + params.Chose_variant)
+          		      echo ('Hello ' + params.Chose_shell)
           		      powershell 'curl $env:HOST'
           		      powershell './test_ps.ps1 -UserName $env:TEST_USER'
          		   }
         }
-        stage('Second') {
+        stage('Bash') {
             when {
-                expression { params.Chose_variant == 'Second' }
+                expression { params.Chose_shell == 'Second' }
             }
          		   steps {
-          		      echo ('Hello ' + params.Chose_variant)
+          		      echo ('Hello ' + params.Chose_shell)
           		      sh 'curl ${HOST}'
          		   }
         }
