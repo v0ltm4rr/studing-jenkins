@@ -13,9 +13,7 @@ pipeline {
                 expression { params.Chose_variant == 'First' }
             }
          		   steps {
-          		      echo 'Hello First'
-          		      echo ''
-          		      echo params.Chose_variant
+          		      echo ('Hello ' + params.Chose_variant)
          		   }
         }
         stage('Second') {
@@ -24,8 +22,6 @@ pipeline {
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
-          		      echo ''
-          		      echo params.Chose_variant
          		   }
         }
     }
