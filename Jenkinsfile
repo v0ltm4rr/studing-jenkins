@@ -10,7 +10,6 @@ pipeline {
     stages {
         stage('First') {
             when {
-                // Only say hello if a "greeting" is requested
                 expression { params.Chose_variant == 'First' }
             }
          		   steps {
@@ -21,7 +20,6 @@ pipeline {
         }
         stage('Second') {
             when {
-                // Only say hello if a "greeting" is requested
                 expression { params.Chose_variant == 'Second' }
             }
          		   steps {
