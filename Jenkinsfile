@@ -1,7 +1,6 @@
 pipeline {
     agent any
    	environment {
- 			//HOST = "${params.Value}"
  			HOST = '2ip.ru'
 	}
     options {
@@ -9,7 +8,6 @@ pipeline {
 	}
     parameters {
 	  choice choices: ['First', 'Second'], description: '', name: 'Chose_variant'
-	  //string defaultValue: '2ip.ru', description: '', name: 'Value', trim: false
 	}
 
     stages {
@@ -28,6 +26,7 @@ pipeline {
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
+          		      sh 'curl ${HOST}'
          		   }
         }
     }
