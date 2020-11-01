@@ -14,7 +14,7 @@ pipeline {
             }
          		   steps {
           		      echo 'Hello First'
-          		      echo
+          		      echo ''
           		      echo params.Chose_variant
          		   }
         }
@@ -24,7 +24,7 @@ pipeline {
             }
          		   steps {
           		      echo 'Hello Second'
-          		      echo
+          		      echo ''
           		      echo params.Chose_variant
          		   }
         }
