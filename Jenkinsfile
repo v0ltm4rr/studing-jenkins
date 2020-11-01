@@ -5,10 +5,13 @@ pipeline {
 	}
     options {
   		timestamps()
+ 	 environment {
+    			HOST = ${params.Value}
+  }
 	}
     parameters {
 	  choice choices: ['First', 'Second'], description: '', name: 'Chose_variant'
-	  string defaultValue: 'Test_values', description: '', name: 'Value', trim: false
+	  string defaultValue: '2ip.ru', description: '', name: 'Value', trim: false
 	}
 
     stages {
@@ -18,7 +21,7 @@ pipeline {
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
-          		      echo params.Value
+          		      sh 'curl $HOST'
          		   }
         }
         stage('Second') {
