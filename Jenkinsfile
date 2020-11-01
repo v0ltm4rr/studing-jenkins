@@ -18,7 +18,7 @@ pipeline {
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
-          		      sh 'curl $HOST'
+          		      sh 'curl ${params.HOST}'
          		   }
         }
         stage('Second') {
