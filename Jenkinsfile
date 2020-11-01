@@ -1,13 +1,10 @@
 pipeline {
     agent any
    	environment {
- 			Value = "Test value "
+ 			HOST = ${params.Value
 	}
     options {
   		timestamps()
- 	 environment {
-    			HOST = ${params.Value}
-  }
 	}
     parameters {
 	  choice choices: ['First', 'Second'], description: '', name: 'Chose_variant'
