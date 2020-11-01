@@ -1,5 +1,8 @@
 pipeline {
     agent any
+   	environment {
+ 			Value = "Test value "
+	}
     options {
   		timestamps()
 	}
@@ -14,6 +17,7 @@ pipeline {
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
+          		      echo $Value
          		   }
         }
         stage('Second') {
