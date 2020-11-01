@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('PowerShell') {
             when {
-                expression { params.Chose_shell == 'First' }
+                expression { params.Chose_shell == 'PowerShell' }
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_shell)
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Bash') {
             when {
-                expression { params.Chose_shell == 'Second' }
+                expression { params.Chose_shell == 'Bash' }
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_shell)
