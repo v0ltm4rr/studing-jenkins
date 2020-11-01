@@ -19,7 +19,7 @@ pipeline {
             }
          		   steps {
           		      echo ('Hello ' + params.Chose_variant)
-          		      sh 'curl ${HOST}'
+          		      powershell 'curl ${HOST}'
          		   }
         }
         stage('Second') {
